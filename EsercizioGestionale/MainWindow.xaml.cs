@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace EsercizioGestionale
 {
@@ -23,6 +24,50 @@ namespace EsercizioGestionale
         public MainWindow()
         {
             InitializeComponent();
+        }
+            string file = "Negozio.txt";
+        private void btnInserisci_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(file, true))
+                {
+                    string testo;
+                    string prodotto = txtProdotto.Text;
+                    double prezzo = double.Parse(txtPrezzo.Text);
+                    testo = $"{prodotto}, {prezzo} €";
+                    writer.WriteLine(testo);
+                    writer.Flush();
+                }
+                txtProdotto.Clear();
+                txtPrezzo.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                txtProdotto.Clear();
+                txtPrezzo.Clear();
+            }
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            if(File.Exists(file))
+                try
+                {
+                    txtCercato.Clear();
+                    string nome = txtCerca.Text;
+                    using (StreamReader reader = new StreamReader(file))
+                    {
+                        string line;
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            if (line.Contains(nome))
+                                txtCercato.Text += $"{line}\n";
+                        }
+                    }
+                }
+                catch { }
         }
     }
 }

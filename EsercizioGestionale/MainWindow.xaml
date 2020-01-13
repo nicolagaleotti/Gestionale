@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EsercizioGestionale"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="446" Width="674">
+    <Grid Background="#FFA9FFE4">
+        <TextBox Name="txtProdotto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="45,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" FontSize="15" Background="#FFF0BDFF"/>
+        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Nome prodotto:" HorizontalAlignment="Left" Margin="45,35,0,0" VerticalAlignment="Top" Height="35" Width="165" FontSize="16" FontWeight="Bold"/>
+        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Prezzo prodotto:" HorizontalAlignment="Left" Margin="255,35,0,0" VerticalAlignment="Top" Height="35" Width="165" FontSize="16" FontWeight="Bold"/>
+        <TextBox Name="txtPrezzo" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="255,70,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="165" FontSize="15" Background="#FFF0BDFF"/>
+        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="€" HorizontalAlignment="Left" Margin="420,70,0,0" VerticalAlignment="Top" Width="25" FontSize="15"/>
+        <Button Name="btnInserisci" Content="Inserisci" HorizontalAlignment="Left" Margin="480,35,0,0" VerticalAlignment="Top" Width="135" Height="65" FontSize="20" FontWeight="Bold" Click="btnInserisci_Click" Background="#FFC8A9FF"/>
+        <TextBox Name="txtCerca" HorizontalAlignment="Left" Height="50" Margin="190,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" FontSize="18"/>
+        <Button Name="btnSearch" HorizontalAlignment="Left" Margin="565,145,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btnSearch_Click" Background="#FFC8A9FF" >
+            <Image Source="img_197387.png" Stretch="Fill" Height="40" Width="40"/>
+        </Button>
+        <Label HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Content="Prodotto trovato:" HorizontalAlignment="Left" Margin="45,236,0,0" VerticalAlignment="Top" Height="35" Width="165" FontSize="16" FontWeight="Bold"/>
+        <TextBox VerticalScrollBarVisibility="Auto" IsReadOnly="True" x:Name="txtCercato" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="139" Margin="210,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="345" FontSize="16" Background="#FFF0BDFF"/>
+        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Cerca:" HorizontalAlignment="Left" Margin="45,145,0,0" VerticalAlignment="Top" Height="50" Width="145" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Window>
